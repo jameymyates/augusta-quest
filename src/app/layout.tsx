@@ -3,8 +3,6 @@ import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
-faConfig.autoAddCss = false;
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
