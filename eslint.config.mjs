@@ -1,7 +1,7 @@
-const config = [
+const eslintConfig = [
   {
     "extends": "next/core-web-vitals"
   }
 ];
 
-export default config;
+export default eslintConfig;
