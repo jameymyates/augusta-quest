@@ -1,0 +1,18 @@
+{
+  "css.customData": [".vscode/tailwind.json"],
+  "editor.defaultColorDecorators": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+}
