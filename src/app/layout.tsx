@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 
