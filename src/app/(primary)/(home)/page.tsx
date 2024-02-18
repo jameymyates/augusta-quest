@@ -1,7 +1,5 @@
-import { FC } from "react";
-
-const Home: FC = () => {
-  return <></>;
+const Home = () => {
+  return <>Homepage</>;
 };
 
 export default Home;
