@@ -25,6 +25,7 @@ const RootLayout = ({
        */}
       <body
         className={cn(
+          "text-base antialiased font-sans font-normal",
           fontDisplay.variable,
           fontMono.variable,
           fontSans.variable,
