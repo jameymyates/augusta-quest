@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import {
   fontDisplay,
   fontMono,
@@ -5,7 +6,6 @@ import {
   fontSerif,
 } from "@/features/ui/fonts";
 import ThemeProvider from "@/features/ui/theme-provider";
-import { cn } from "@/utils";
 import "@/styles/globals.css";
 
 const RootLayout = ({
