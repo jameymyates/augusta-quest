@@ -15,6 +15,4 @@ const RootLayout = ({
   );
 };
 
-export { metadata };
-
 export default RootLayout;
