@@ -4,6 +4,7 @@ import {
   fontSans,
   fontSerif,
 } from "@/features/ui/fonts";
+import ThemeProvider from "@/features/ui/theme-provider";
 import { cn } from "@/utils";
 import "@/styles/globals.css";
 
@@ -32,7 +33,14 @@ const RootLayout = ({
           fontSerif.variable
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
