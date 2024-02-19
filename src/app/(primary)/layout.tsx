@@ -1,3 +1,4 @@
+import React from "react";
 import Footer from "@/features/ui/footer";
 import Header from "@/features/ui/header/header";
 
