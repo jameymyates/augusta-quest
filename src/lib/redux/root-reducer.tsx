@@ -1,7 +1,3 @@
-import { counterSlice } from "./slices";
-
-const reducer = {
-  counter: counterSlice.reducer,
-};
+const reducer = {};
 
 export { reducer };
