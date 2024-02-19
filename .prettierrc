@@ -7,7 +7,7 @@
     "^react$",
     "^next/",
     "<THIRD_PARTY_MODULES>",
-    "^@/(features|providers|utils)",
+    "^@/(features|lib)",
     "^[.]{0,2}/",
     ".svg$",
     "^(?!@/styles).+(.scss|.css)$",
