@@ -1,3 +1,4 @@
+import Script from "next/script";
 import {
   fontDisplay,
   fontMono,
@@ -35,6 +36,7 @@ const RootLayout = ({
           )}
         >
           {children}
+          <Script src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js" />
         </body>
       </html>
     </Providers>
