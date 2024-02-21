@@ -1,15 +1,12 @@
 "use client";
 
-import React from "react";
+import { FC, useEffect } from "react";
 
-const GlobalError = ({
-  error,
-  reset,
-}: {
+const GlobalError: FC<{
   error: Error & { digest?: string };
   reset: () => void;
-}) => {
-  React.useEffect(() => {
+}> = ({ error, reset }) => {
+  useEffect(() => {
     /**
      * Log the error to an error reporting service
      */
@@ -21,7 +18,9 @@ const GlobalError = ({
       <body>
         <div role="alert">
           <h2>Something went wrong!</h2>
-          <button onClick={() => reset()}>Try again</button>
+          <button onClick={() => reset()} type="button">
+            Try again
+          </button>
         </div>
       </body>
     </html>

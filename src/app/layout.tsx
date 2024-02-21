@@ -1,4 +1,4 @@
-import React from "react";
+import { FC, PropsWithChildren } from "react";
 import Script from "next/script";
 import {
   fontDisplay,
@@ -10,11 +10,7 @@ import { Providers } from "@/lib/providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) => {
+const RootLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
