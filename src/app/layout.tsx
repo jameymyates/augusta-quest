@@ -24,7 +24,7 @@ const RootLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
        */}
       <body
         className={cn(
-          "text-base antialiased font-sans font-normal",
+          "bg-light text-dark dark:bg-dark dark:text-light text-base antialiased font-sans font-normal",
           fontDisplay.variable,
           fontMono.variable,
           fontSans.variable,
