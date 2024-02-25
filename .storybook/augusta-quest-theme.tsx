@@ -16,10 +16,10 @@ export default create({
   // Main colors
 
   /* Picton Blue #45b2e8 */
-  colorPrimary: "hsl(200, 78%, 59%)",
+  colorPrimary: "hsl(200, 78%, 59% )",
 
-  /* Bahama Blue #106294 */
-  colorSecondary: "hsl(203, 80%, 32%)",
+  /* Crusta #e87b45 */
+  colorSecondary: "hsl(20, 78%, 59%)",
 
   // UI
 
