@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react";
+import React from "react";
 import Script from "next/script";
 import {
   fontDisplay,
@@ -10,7 +10,9 @@ import { Providers } from "@/lib/providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const RootLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
+const RootLayout: React.FC<Readonly<React.PropsWithChildren>> = ({
+  children,
+}) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -24,7 +26,7 @@ const RootLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
        */}
       <body
         className={cn(
-          "bg-light text-dark dark:bg-dark dark:text-light text-base antialiased font-sans font-normal",
+          "bg-white text-black dark:bg-black dark:text-white text-base antialiased font-sans font-normal",
           fontDisplay.variable,
           fontMono.variable,
           fontSans.variable,
