@@ -10,228 +10,120 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        "te-primary": "0 0 0 1px rgb(59, 113, 202)",
-        1: "0 0 2px 0 rgba(0,0,0,.07),0 1px 1px 0 rgba(0,0,0,.04)",
-        "1-strong": "0 0 2px 0 rgba(0,0,0,.16),0 1px 1px 0 rgba(0,0,0,.1)",
-        2: "0 0 3px 0 rgba(0,0,0,.07),0 2px 2px 0 rgba(0,0,0,.04)",
-        "2-strong": "0 0 3px 0 rgba(0,0,0,.16),0 2px 2px 0 rgba(0,0,0,.1)",
-        3: "0 2px 6px -1px rgba(0,0,0,.07),0 6px 18px -1px rgba(0,0,0,.04)",
-        "3-strong":
-          "0 2px 6px -1px rgba(0,0,0,.16),0 6px 18px -1px rgba(0,0,0,.1)",
-        4: "0 2px 15px -3px rgba(0,0,0,.07),0 10px 20px -2px rgba(0,0,0,.04)",
-        "4-strong":
-          "0 2px 15px -3px rgba(0,0,0,.16),0 10px 20px -2px rgba(0,0,0,.1)",
-        5: "0 2px 25px -5px rgba(0,0,0,.07),0 25px 21px -5px rgba(0,0,0,.04)",
-        "5-strong":
-          " 0 2px 25px -5px rgba(0,0,0,.16),0 25px 21px -5px rgba(0,0,0,.1)",
-        "twe-inner": "inset 0 2px 4px 0 #0000000d",
-      },
-
       colors: {
-        /* Alabaster #f7f7f8 */
-        white: "hsl(240 7% 97% / <alpha-value>)",
-
-        /* Woodsmoke #18181a */
-        black: "hsl(240 4% 10% / <alpha-value>)",
-
+        white: "hsl(240 4% 96% / <alpha-value>)",
+        black: "hsl(240.01 4% 10% / <alpha-value>)",
         primary: {
-          /* Solitude #e2f1fc */
-          lightest: "hsl(205 81% 94% / <alpha-value>)",
-
-          /* Sail #bfe2f8 */
-          lighter: "hsl(203 80% 86% / <alpha-value>)",
-
-          /* Cornflower #87ccf2 */
-          light: "hsl(201 80% 74% / <alpha-value>)",
-
-          /* Picton Blue #45b1e8 */
-          DEFAULT: "hsl(200 78% 59% / <alpha-value>)",
-
-          /* Curious Blue #2098d7 */
-          dark: "hsl(201 74% 48% / <alpha-value>)",
-
-          /* Lochmara #127ab7 */
-          darker: "hsl(202 82% 39% / <alpha-value>)",
-
-          /* Bahama Blue #106194 */
-          darkest: "hsl(203 80% 32% / <alpha-value>)",
+          50: "hsl(200 75% 97% / <alpha-value>)",
+          100: "hsl(200 80% 94% / <alpha-value>)",
+          200: "hsl(200, 78%, 87% / <alpha-value>)",
+          300: "hsl(200 78% 79% / <alpha-value>)",
+          400: "hsl(200 77% 70% / <alpha-value>)",
+          500: "hsl(200 78% 59% / <alpha-value>)",
+          600: "hsl(200 79% 50% / <alpha-value>)",
+          700: "hsl(200 78% 44% / <alpha-value>)",
+          800: "hsl(200 79% 36% / <alpha-value>)",
+          900: "hsl(200 77% 26% / <alpha-value>)",
+          950: "hsl(200 79% 19% / <alpha-value>)",
         },
-
         secondary: {
-          /* Picton Blue #48b2e8 */
-          lightest: "hsl(200 78% 60% / <alpha-value>)",
-
-          /* Curious Blue #2098d7 */
-          lighter: "hsl(201 74% 48% / <alpha-value>)",
-
-          /* Lochmara #127ab7 */
-          light: "hsl(202 82% 39% / <alpha-value>)",
-
-          /* Bahama Blue #106194 */
-          DEFAULT: "hsl(203 80% 32% / <alpha-value>)",
-
-          /* Chathams Blue #11537b */
-          dark: "hsl(203 76% 27% / <alpha-value>)",
-
-          /* Astronaut Blue #144566 */
-          darker: "hsl(204 67% 24% / <alpha-value>)",
-
-          /* Blue Whale #0d2c44 */
-          darkest: "hsl(206 68% 16% / <alpha-value>)",
+          50: "hsl(20 74% 97% / <alpha-value>)",
+          100: "hsl(20 78% 93% / <alpha-value>)",
+          200: "hsl(20 78% 84% / <alpha-value>)",
+          300: "hsl(20 78% 74% / <alpha-value>)",
+          400: "hsl(20 78% 60% / <alpha-value>)",
+          500: "hsl(20 78% 41% / <alpha-value>)",
+          600: "hsl(20 77% 37% / <alpha-value>)",
+          700: "hsl(20 78% 33% / <alpha-value>)",
+          800: "hsl(20 78% 26% / <alpha-value>)",
+          900: "hsl(20 79% 18% / <alpha-value>)",
+          950: "hsl(20 79% 15% / <alpha-value>)",
         },
-
-        accent: {
-          /* Karry #fbe8d9 */
-          lightest: "hsl(26 81% 92% / <alpha-value>)",
-
-          /* Apricot Peach #f6ceb2 */
-          lighter: "hsl(25 79% 83% / <alpha-value>)",
-
-          /* Tacao #f0ad81 */
-          light: "hsl(24 79% 72% / <alpha-value>)",
-
-          /* Crusta #e87b45 */
-          DEFAULT: "hsl(20 78% 59% / <alpha-value>)",
-
-          /* Red Damask #e4612b */
-          dark: "hsl(18 77% 53% / <alpha-value>)",
-
-          /* Grenadier #d54a21 */
-          darker: "hsl(14 73% 48% / <alpha-value>)",
-
-          /* Thunderbird #b1361d */
-          darkest: "hsl(10 72% 40% / <alpha-value>)",
-        },
-
         success: {
-          /* Conifer #a2e635 */
-          lightest: "hsl(86 78% 55% / <alpha-value>)",
-
-          /* Atlantis #83cc16 */
-          lighter: "hsl(86 81% 44% / <alpha-value>)",
-
-          /* Christi #64a30d */
-          light: "hsl(86 85% 35% / <alpha-value>)",
-
-          /* Bilbao #4c7b0f */
-          DEFAULT: "hsl(86 78% 27% / <alpha-value>)",
-
-          /* Dell #3f6212 */
-          dark: "hsl(86 69% 23% / <alpha-value>)",
-
-          /* Green House #365314 */
-          darker: "hsl(86 61% 20% / <alpha-value>)",
-
-          /* Deep Forest Green #1a2e05 */
-          darkest: "hsl(86 80% 10% / <alpha-value>)",
+          50: "hsl(86 80% 92% / <alpha-value>)",
+          100: "hsl(86 78% 82% / <alpha-value>)",
+          200: "hsl(86 78% 59% / <alpha-value>)",
+          300: "hsl(86 78% 45% / <alpha-value>)",
+          400: "hsl(86 79% 38% / <alpha-value>)",
+          500: "hsl(86 79% 27% / <alpha-value>)",
+          600: "hsl(86 78% 25% / <alpha-value>)",
+          700: "hsl(86 77% 21% / <alpha-value>)",
+          800: "hsl(86 80% 17% / <alpha-value>)",
+          900: "hsl(86 78% 12% / <alpha-value>)",
+          950: "hsl(86 77% 10% / <alpha-value>)",
         },
-
         danger: {
-          /* Carnation #f87171 */
-          lightest: "hsl(0 91% 71% / <alpha-value>)",
-
-          /* Coral Red #ef4444 */
-          lighter: "hsl(0 84% 60% / <alpha-value>)",
-
-          /* Persian Red #dc2626 */
-          light: "hsl(0 72% 51% / <alpha-value>)",
-
-          /* Monza #ba1c1c */
-          DEFAULT: "hsl(0 74% 42% / <alpha-value>)",
-
-          /* Tamarillo #991b1b */
-          dark: "hsl(0 70% 35% / <alpha-value>)",
-
-          /* Falu Red #7f1d1d */
-          darker: "hsl(0 63% 31% / <alpha-value>)",
-
-          /* Bulgarian Rose #450a0a */
-          darkest: "hsl(0 75% 15% / <alpha-value>)",
+          50: "hsl(0 74% 97% / <alpha-value>)",
+          100: "hsl(0 73% 94% / <alpha-value>)",
+          200: "hsl(0 73% 88% / <alpha-value>)",
+          300: "hsl(0 74% 79% / <alpha-value>)",
+          400: "hsl(0 74% 67% / <alpha-value>)",
+          500: "hsl(0 74% 42% / <alpha-value>)",
+          600: "hsl(0 74% 38% / <alpha-value>)",
+          700: "hsl(0 73% 34% / <alpha-value>)",
+          800: "hsl(0 74% 29% / <alpha-value>)",
+          900: "hsl(0 74% 18% / <alpha-value>)",
+          950: "hsl(0 74% 12% / <alpha-value>)",
         },
-
         warning: {
-          /* Sweet Corn #fef08a */
-          lightest: "hsl(46 98% 77% / <alpha-value>)",
-
-          /* Energy Yellow #fddf47 */
-          lighter: "hsl(45 98% 64% / <alpha-value>)",
-
-          /* Supernova #facb15 */
-          light: "hsl(45 96% 53% / <alpha-value>)",
-
-          /* Tulip Tree #e7b008 */
-          DEFAULT: "hsl(45 93% 47% / <alpha-value>)",
-
-          /* Geebung #ca8904 */
-          dark: "hsl(45 96% 40% / <alpha-value>)",
-
-          /* Reno Sand #a16107 */
-          darker: "hsl(46 92% 33% / <alpha-value>)",
-
-          /* Bull Shot #854d0e */
-          darkest: "hsl(45 81% 29% / <alpha-value>)",
+          50: "hsl(47 90% 96% / <alpha-value>)",
+          100: "hsl(46 91% 91% / <alpha-value>)",
+          200: "hsl(45 94% 81% / <alpha-value>)",
+          300: "hsl(45 94% 69% / <alpha-value>)",
+          400: "hsl(44 93% 54% / <alpha-value>)",
+          500: "hsl(45 94% 47% / <alpha-value>)",
+          600: "hsl(45 94% 42% / <alpha-value>)",
+          700: "hsl(45 91% 37% / <alpha-value>)",
+          800: "hsl(45 92% 31% / <alpha-value>)",
+          900: "hsl(45 92% 23% / <alpha-value>)",
+          950: "hsl(45 92% 16% / <alpha-value>)",
         },
-
         info: {
-          /* Gallery #efeff0 */
-          lightest: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Mercury #e1e2e4 */
-          lighter: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Iron #cecfd3 */
-          light: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* French Gray #b9bac0 */
-          DEFAULT: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Aluminium #a6a6ae */
-          dark: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Mountain Mist #91919a */
-          darker: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Jumbo #7d7d85 */
-          darkest: "hsl(231 5% 74% / <alpha-value>)",
+          50: "hsl(210 24% 98% / <alpha-value>)",
+          100: "hsl(210 22% 97% / <alpha-value>)",
+          200: "hsl(218 25% 94% / <alpha-value>)",
+          300: "hsl(212 27% 90% / <alpha-value>)",
+          400: "hsl(213 27% 87% / <alpha-value>)",
+          500: "hsl(213 27% 84% / <alpha-value>)",
+          600: "hsl(212 27% 67% / <alpha-value>)",
+          700: "hsl(213 27% 50% / <alpha-value>)",
+          800: "hsl(213 27% 34% / <alpha-value>)",
+          900: "hsl(214 27% 17% / <alpha-value>)",
+          950: "hsl(213 28% 8% / <alpha-value>)",
         },
-
         neutral: {
-          /* Alabaster #f7f7f8 */
-          50: "hsl(240 7% 97% / <alpha-value>)",
-
-          /* Athens Gray #eeeef0 */
-          100: "hsl(240 6% 94% / <alpha-value>)",
-
-          /* Alto #dadadd */
-          200: "hsl(240 4% 86% / <alpha-value>)",
-
-          /* French Gray #b9bac0 */
-          300: "hsl(231 5% 74% / <alpha-value>)",
-
-          /* Mountain Mist #93949d */
-          400: "hsl(234 5% 60% / <alpha-value>)",
-
-          /* Jumbo #767781 */
-          500: "hsl(235 4% 48% / <alpha-value>)",
-
-          /* Shuttle Gray #606169 */
-          600: "hsl(233 4% 39% / <alpha-value>)",
-
-          /* Abbey #4e4e56 */
-          700: "hsl(240 5% 32% / <alpha-value>)",
-
-          /* Gravel #434349 */
-          800: "hsl(240 4% 27% / <alpha-value>)",
-
-          /* Tuatara #3b3c3f */
-          900: "hsl(225 3% 24% / <alpha-value>)",
-
-          /* Woodsmoke #18181a */
+          50: "hsl(240 4% 96% / <alpha-value>)",
+          100: "hsl(240 6% 93% / <alpha-value>)",
+          200: "hsl(240 5% 88% / <alpha-value>)",
+          300: "hsl(240 3% 83% / <alpha-value>)",
+          400: "hsl(240 4% 77% / <alpha-value>)",
+          500: "hsl(240 3% 72% / <alpha-value>)",
+          600: "hsl(240 4% 65% / <alpha-value>)",
+          700: "hsl(240 4% 56% / <alpha-value>)",
+          800: "hsl(240 4% 45% / <alpha-value>)",
+          900: "hsl(240 3% 28% / <alpha-value>)",
           950: "hsl(240 4% 10% / <alpha-value>)",
         },
       },
-
+      boxShadow: {
+        "te-primary": "0 0 0 1px hsl(200 78% 59%)",
+        1: "0 0 2px 0 hsla(0 0% 0% 0.07), 0 1px 1px 0 hsla(0 0% 0% 0.04)",
+        "1-strong":
+          "0 0 2px 0 hsla(0 0% 0% 0.04), 0 1px 1px 0 hsla(0 0% 0% 0.1)",
+        2: "0 0 3px 0 hsla(0 0% 0% 0.07), 0 2px 2px 0 hsla(0 0% 0% 0.04)",
+        "2-strong":
+          "0 0 3px 0 hsla(0 0% 0% 0.04), 0 2px 2px 0 hsla(0 0% 0% 0.1)",
+        3: "0 2px 6px -1px hsla(0 0% 0% 0.07), 0 6px 18px -1px hsla(0 0% 0% 0.04)",
+        "3-strong":
+          "0 2px 6px -1px hsla(0 0% 0% 0.04), 0 6px 18px -1px hsla(0 0% 0% 0.1)",
+        4: "0 2px 15px -3px hsla(0 0% 0% 0.07), 0 10px 20px -2px hsla(0 0% 0% 0.04)",
+        "4-strong":
+          "0 2px 15px -3px hsla(0 0% 0% 0.04), 0 10px 20px -2px hsla(0 0% 0% 0.1)",
+        5: "0 2px 25px -5px hsla(0 0% 0% 0.07), 0 25px 21px -5px hsla(0 0% 0% 0.04)",
+        "5-strong":
+          "0 2px 25px -5px hsla(0 0% 0% 0.04), 0 25px 21px -5px hsla(0 0% 0% 0.1)",
+        "twe-inner": "inset 0 2px 4px 0 hsla(0 0% 0% 0.05)",
+      },
       /**
        * The variables below are created in ./src/features/ui/fonts/index.tsx
        * and inserted in the body tag in ./src/app/layout.tsx.
@@ -242,7 +134,6 @@ const config: Config = {
         mono: ["var(--font-mono)", ...fontFamily.mono],
         display: ["var(--font-display)", ...fontFamily.sans],
       },
-
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0" },
