@@ -1,8 +1,10 @@
-import { FC, PropsWithChildren } from "react";
+import React from "react";
 import Footer from "@/features/ui/footer";
 import Header from "@/features/ui/header/header";
 
-const PrimaryLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
+const PrimaryLayout: React.FC<Readonly<React.PropsWithChildren>> = ({
+  children,
+}) => {
   return (
     <>
       <Header />
