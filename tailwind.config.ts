@@ -2,6 +2,10 @@ import { spacing, borderRadius, fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 import type { Config } from "tailwindcss";
 
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 const config: Config = {
   darkMode: "class",
   content: [
@@ -11,9 +15,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        white: "hsl(240 4% 96% / <alpha-value>)",
-        black: "hsl(240.01 4% 10% / <alpha-value>)",
+        // Wild Sand - #f4f4f5
+        light: "hsl(240 4% 96% / <alpha-value>)",
+        // Bunker - #18181b
+        dark: "hsl(240 4% 10% / <alpha-value>)",
         primary: {
+          // Picton Blue - #45b2e8 (500)
+          DEFAULT: "hsl(200 78% 59% / <alpha-value>)",
           50: "hsl(200 75% 97% / <alpha-value>)",
           100: "hsl(200 80% 94% / <alpha-value>)",
           200: "hsl(200, 78%, 87% / <alpha-value>)",
@@ -25,21 +33,27 @@ const config: Config = {
           800: "hsl(200 79% 36% / <alpha-value>)",
           900: "hsl(200 77% 26% / <alpha-value>)",
           950: "hsl(200 79% 19% / <alpha-value>)",
+          foreground: "hsl(200 75% 97% / <alpha-value>)",
         },
         secondary: {
-          50: "hsl(20 74% 97% / <alpha-value>)",
-          100: "hsl(20 78% 93% / <alpha-value>)",
-          200: "hsl(20 78% 84% / <alpha-value>)",
-          300: "hsl(20 78% 74% / <alpha-value>)",
-          400: "hsl(20 78% 60% / <alpha-value>)",
-          500: "hsl(20 78% 41% / <alpha-value>)",
-          600: "hsl(20 77% 37% / <alpha-value>)",
-          700: "hsl(20 78% 33% / <alpha-value>)",
-          800: "hsl(20 78% 26% / <alpha-value>)",
-          900: "hsl(20 79% 18% / <alpha-value>)",
-          950: "hsl(20 79% 15% / <alpha-value>)",
+          // Crusta - #e97e49 (500)
+          DEFAULT: "hsl(20 78% 60% / <alpha-value>)",
+          50: "hsl(20 75% 97% / <alpha-value>)",
+          100: "hsl(20 80% 94% / <alpha-value>)",
+          200: "hsl(20 77% 88% / <alpha-value>)",
+          300: "hsl(20 78% 80% / <alpha-value>)",
+          400: "hsl(20 78% 71% / <alpha-value>)",
+          500: "hsl(20 78% 60% / <alpha-value>)",
+          600: "hsl(20 79% 52% / <alpha-value>)",
+          700: "hsl(20 79% 46% / <alpha-value>)",
+          800: "hsl(20 79% 37% / <alpha-value>)",
+          900: "hsl(20 79% 28% / <alpha-value>)",
+          950: "hsl(20 78% 18% / <alpha-value>)",
+          foreground: "hsl(20 75% 97% / <alpha-value>)",
         },
         success: {
+          // Bilbao - #4c7b0e (500)
+          DEFAULT: "hsl(86 79% 27% / <alpha-value>)",
           50: "hsl(86 80% 92% / <alpha-value>)",
           100: "hsl(86 78% 82% / <alpha-value>)",
           200: "hsl(86 78% 59% / <alpha-value>)",
@@ -51,8 +65,11 @@ const config: Config = {
           800: "hsl(86 80% 17% / <alpha-value>)",
           900: "hsl(86 78% 12% / <alpha-value>)",
           950: "hsl(86 77% 10% / <alpha-value>)",
+          foreground: "hsl(86 80% 92% / <alpha-value>)",
         },
         danger: {
+          // Monza - #ba1c1c (500)
+          DEFAULT: "hsl(0 74% 42% / <alpha-value>)",
           50: "hsl(0 74% 97% / <alpha-value>)",
           100: "hsl(0 73% 94% / <alpha-value>)",
           200: "hsl(0 73% 88% / <alpha-value>)",
@@ -64,8 +81,11 @@ const config: Config = {
           800: "hsl(0 74% 29% / <alpha-value>)",
           900: "hsl(0 74% 18% / <alpha-value>)",
           950: "hsl(0 74% 12% / <alpha-value>)",
+          foreground: "hsl(0 74% 97% / <alpha-value>)",
         },
         warning: {
+          // Tulip Tree - #e9b007 (500)
+          DEFAULT: "hsl(45 94% 47% / <alpha-value>)",
           50: "hsl(47 90% 96% / <alpha-value>)",
           100: "hsl(46 91% 91% / <alpha-value>)",
           200: "hsl(45 94% 81% / <alpha-value>)",
@@ -77,8 +97,11 @@ const config: Config = {
           800: "hsl(45 92% 31% / <alpha-value>)",
           900: "hsl(45 92% 23% / <alpha-value>)",
           950: "hsl(45 92% 16% / <alpha-value>)",
+          foreground: "hsl(45 92% 16% / <alpha-value>)",
         },
         info: {
+          // Link Water - #cbd5e1 (500)
+          DEFAULT: "hsl(213 27% 84% / <alpha-value>)",
           50: "hsl(210 24% 98% / <alpha-value>)",
           100: "hsl(210 22% 97% / <alpha-value>)",
           200: "hsl(218 25% 94% / <alpha-value>)",
@@ -90,8 +113,11 @@ const config: Config = {
           800: "hsl(213 27% 34% / <alpha-value>)",
           900: "hsl(214 27% 17% / <alpha-value>)",
           950: "hsl(213 28% 8% / <alpha-value>)",
+          foreground: "hsl(213 28% 8% / <alpha-value>)",
         },
         neutral: {
+          // Bombay - #b5b5ba (500)
+          DEFAULT: "hsl(240 3% 72% / <alpha-value>)",
           50: "hsl(240 4% 96% / <alpha-value>)",
           100: "hsl(240 6% 93% / <alpha-value>)",
           200: "hsl(240 5% 88% / <alpha-value>)",
@@ -103,26 +129,27 @@ const config: Config = {
           800: "hsl(240 4% 45% / <alpha-value>)",
           900: "hsl(240 3% 28% / <alpha-value>)",
           950: "hsl(240 4% 10% / <alpha-value>)",
+          foreground: "hsl(240 4% 10% / <alpha-value>)",
         },
       },
       boxShadow: {
-        "te-primary": "0 0 0 1px hsl(200 78% 59%)",
-        1: "0 0 2px 0 hsla(0 0% 0% 0.07), 0 1px 1px 0 hsla(0 0% 0% 0.04)",
+        "te-primary": "0 0 0 1px hsl(200,78%,59%)",
+        1: "0 0 2px 0 hsla(0,0%,0%,0.07), 0 1px 1px 0 hsla(0,0%,0%,0.04)",
         "1-strong":
-          "0 0 2px 0 hsla(0 0% 0% 0.04), 0 1px 1px 0 hsla(0 0% 0% 0.1)",
-        2: "0 0 3px 0 hsla(0 0% 0% 0.07), 0 2px 2px 0 hsla(0 0% 0% 0.04)",
+          "0 0 2px 0 hsla(0,0%,0%,0.04), 0 1px 1px 0 hsla(0,0%,0%,0.1)",
+        2: "0 0 3px 0 hsla(0,0%,0%,0.07), 0 2px 2px 0 hsla(0,0%,0%,0.04)",
         "2-strong":
-          "0 0 3px 0 hsla(0 0% 0% 0.04), 0 2px 2px 0 hsla(0 0% 0% 0.1)",
-        3: "0 2px 6px -1px hsla(0 0% 0% 0.07), 0 6px 18px -1px hsla(0 0% 0% 0.04)",
+          "0 0 3px 0 hsla(0,0%,0%,0.04), 0 2px 2px 0 hsla(0,0%,0%,0.1)",
+        3: "0 2px 6px -1px hsla(0,0%,0%,0.07), 0 6px 18px -1px hsla(0,0%,0%,0.04)",
         "3-strong":
-          "0 2px 6px -1px hsla(0 0% 0% 0.04), 0 6px 18px -1px hsla(0 0% 0% 0.1)",
-        4: "0 2px 15px -3px hsla(0 0% 0% 0.07), 0 10px 20px -2px hsla(0 0% 0% 0.04)",
+          "0 2px 6px -1px hsla(0,0%,0%,0.04), 0 6px 18px -1px hsla(0,0%,0%,0.1)",
+        4: "0 2px 15px -3px hsla(0,0%,0%,0.07), 0 10px 20px -2px hsla(0,0%,0%,0.04)",
         "4-strong":
-          "0 2px 15px -3px hsla(0 0% 0% 0.04), 0 10px 20px -2px hsla(0 0% 0% 0.1)",
-        5: "0 2px 25px -5px hsla(0 0% 0% 0.07), 0 25px 21px -5px hsla(0 0% 0% 0.04)",
+          "0 2px 15px -3px hsla(0,0%,0%,0.04), 0 10px 20px -2px hsla(0,0%,0%,0.1)",
+        5: "0 2px 25px -5px hsla(0,0%,0%,0.07), 0 25px 21px -5px hsla(0,0%,0%,0.04)",
         "5-strong":
-          "0 2px 25px -5px hsla(0 0% 0% 0.04), 0 25px 21px -5px hsla(0 0% 0% 0.1)",
-        "twe-inner": "inset 0 2px 4px 0 hsla(0 0% 0% 0.05)",
+          "0 2px 25px -5px hsla(0,0%,0%,0.04), 0 25px 21px -5px hsla(0,0%,0%,0.1)",
+        "twe-inner": "inset 0 2px 4px 0 hsla(0,0%,0%,0.05)",
       },
       /**
        * The variables below are created in ./src/features/ui/fonts/index.tsx
@@ -718,6 +745,19 @@ const config: Config = {
         ".dark :active::-webkit-slider-thumb": {
           backgroundColor: theme("colors.primary.600"),
         },
+      });
+    }),
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"]);
+    }),
+    plugin(function ({ addBase, theme }: any) {
+      let allColors = flattenColorPalette(theme("colors"));
+      let newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+      );
+
+      addBase({
+        ":root": newVars,
       });
     }),
   ],
