@@ -15,60 +15,60 @@ export default create({
 
   // Main colors
 
-  /* Picton Blue #45b2e8 */
+  /* Picton Blue - #45b2e8 */
   colorPrimary: "hsl(200, 78%, 59% )",
 
-  /* Crusta #e87b45 */
-  colorSecondary: "hsl(20, 78%, 59%)",
+  /* Crusta - #e87b45 */
+  colorSecondary: "hsl(20, 78%, 60%)",
 
   // UI
 
-  /* Alabaster #f7f7f8 */
-  appBg: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  appBg: "hsl(240, 4%, 96%)",
 
-  /* Alabaster #f7f7f8 */
-  appContentBg: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  appContentBg: "hsl(240, 4%, 96%)",
 
-  /* Alabaster #f7f7f8 */
-  appPreviewBg: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  appPreviewBg: "hsl(240, 4%, 96%)",
 
-  /* Alto #dadadd */
-  appBorderColor: "hsl(240, 4%, 86%)",
+  /* Iron - #cfcfd2 */
+  appBorderColor: "hsl(240, 3%, 82%)",
 
   appBorderRadius: 4,
 
   // Text colors
 
-  /* Woodsmoke #18181a */
-  textColor: "hsl(240, 4%, 10%)",
+  /* Bunker - #18181b */
+  textColor: "hsl(240, 6%, 10%)",
 
-  /* Alabaster #f7f7f8 */
-  textInverseColor: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  textInverseColor: "hsl(240, 4%, 96%)",
 
-  /* Picton Blue #45b2e8 */
+  /* Picton Blue - #45b2e8 */
   textMutedColor: "hsl(200, 78%, 59%)",
 
   // Toolbar default and active colors
 
-  /* Jumbo #767781 */
-  barTextColor: "hsl(235, 4%, 48%)",
+  /* Dove Gray - #68676c */
+  barTextColor: "hsl(252, 2%, 41%)",
 
   /* Picton Blue #45b2e8 */
   barSelectedColor: "hsl(200, 78%, 59%)",
 
-  /* Alabaster #f7f7f8 */
-  barBg: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  barBg: "hsl(240, 4%, 96%)",
 
   // Form colors
 
-  /* Alabaster #f7f7f8 */
-  inputBg: "hsl(240, 7%, 97%)",
+  /* Wild Sand - #f4f4f5 */
+  inputBg: "hsl(240, 4%, 96%)",
 
-  /* Woodsmoke #18181a */
-  inputBorder: "hsl(240, 4%, 10%)",
+  /* Bunker - #18181b */
+  inputBorder: "hsl(240, 6%, 10%)",
 
-  /* Woodsmoke #18181a */
-  inputTextColor: "hsl(240, 4%, 10%)",
+  /* Bunker - #18181b */
+  inputTextColor: "hsl(240, 6%, 10%)",
 
   inputBorderRadius: 2,
 });
