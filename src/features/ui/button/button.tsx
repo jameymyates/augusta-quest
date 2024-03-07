@@ -7,12 +7,16 @@ const button = cva("button", {
     intent: {
       primary: ["bg-primary", "text-primary-foreground"],
       secondary: ["bg-secondary", "text-secondary-foreground"],
-      tertriary: [
+      tertiary: [
         "text-primary",
         "shadow-transparent",
         "hover:shadow-transparent",
         "focus:shadow-transparent",
         "active:shadow-transparent",
+        "px-2",
+        "pb-2",
+        "pt-2.5",
+        "text-xs",
       ],
       success: ["bg-success", "text-success-foreground"],
       warning: ["bg-warning", "text-warning-foreground"],
@@ -20,6 +24,13 @@ const button = cva("button", {
       info: ["bg-info", "text-info-foreground"],
       light: ["bg-light", "text-dark", "after:from-neutral/30"],
       dark: ["bg-neutral-950", "text-neutral-50"],
+      link: [
+        "text-primary",
+        "shadow-transparent",
+        "hover:shadow-transparent",
+        "focus:shadow-transparent",
+        "active:shadow-transparent",
+      ],
       outline: [
         "border-2",
         "border-primary",
@@ -55,6 +66,7 @@ interface ButtonProps
     VariantProps<typeof button>,
     React.PropsWithChildren {
   ripple?: boolean;
+  rippleColor?: string;
 }
 
 const Button: React.FC<Readonly<ButtonProps>> = ({
@@ -62,8 +74,21 @@ const Button: React.FC<Readonly<ButtonProps>> = ({
   className,
   intent,
   ripple = true,
+  rippleColor = "light",
   size,
 }) => {
+  if (intent === ("tertiary" || "link")) {
+    ripple = false;
+  }
+
+  if (intent === "outline") {
+    rippleColor = "primary";
+  }
+
+  if (intent === "light") {
+    rippleColor = "#b8b9c1";
+  }
+
   React.useEffect(() => {
     if (!ripple) return;
 
@@ -74,16 +99,6 @@ const Button: React.FC<Readonly<ButtonProps>> = ({
 
     init();
   }, [ripple]);
-
-  let rippleColor;
-
-  if (intent === "outline") {
-    rippleColor = "primary";
-  } else if (intent === "light") {
-    rippleColor = "#b8b9c1";
-  } else {
-    rippleColor = "light";
-  }
 
   return (
     <button

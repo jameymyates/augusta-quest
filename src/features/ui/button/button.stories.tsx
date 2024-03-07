@@ -17,7 +17,6 @@ const meta = {
       control: "radio",
       description: "The style variant of the button.",
       options: [
-        "default",
         "primary",
         "secondary",
         "tertriary",
@@ -26,6 +25,7 @@ const meta = {
         "info",
         "light",
         "dark",
+        "link",
         "outline",
         "floating",
       ],
@@ -81,7 +81,7 @@ export const Secondary: Story = {
 export const Tertriary: Story = {
   args: {
     children: "Tertriary",
-    intent: "tertriary",
+    intent: "tertiary",
   },
 };
 
@@ -124,6 +124,13 @@ export const Dark: Story = {
   args: {
     children: "Dark",
     intent: "dark",
+  },
+};
+
+export const Link: Story = {
+  args: {
+    children: "Link",
+    intent: "link",
   },
 };
 
