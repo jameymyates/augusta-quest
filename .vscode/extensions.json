@@ -4,6 +4,8 @@
     "dbaeumer.vscode-eslint",
     "ms-vscode.vscode-typescript-next",
     "christian-kohler.path-intellisense",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "zascal.css-sorter",
+    "mrmlnc.vscode-attrs-sorter"
   ]
 }
