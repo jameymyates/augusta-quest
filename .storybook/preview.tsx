@@ -3,6 +3,15 @@ import type { Preview } from "@storybook/react";
 import "../src/styles/globals.css";
 
 const preview: Preview = {
+  decorators: [
+    withThemeByClassName({
+      defaultTheme: "light",
+      themes: {
+        dark: "dark",
+        light: "light",
+      },
+    }),
+  ],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -14,16 +23,26 @@ const preview: Preview = {
     nextjs: {
       appDirectory: true,
     },
-  },
-  decorators: [
-    withThemeByClassName({
-      themes: {
-        light: "light",
-        dark: "dark",
+    options: {
+      storySort: {
+        order: [
+          "Features",
+          [
+            "UI",
+            [
+              "Button",
+              "Footer",
+              "Header",
+              "Logo",
+              "Navbar",
+              "Primary Menu",
+              "Secondary Menu",
+            ],
+          ],
+        ],
       },
-      defaultTheme: "light",
-    }),
-  ],
+    },
+  },
 };
 
 export default preview;
