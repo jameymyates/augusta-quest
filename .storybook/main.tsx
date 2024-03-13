@@ -16,7 +16,6 @@ const config: StorybookConfig = {
   framework: {
     name: "@storybook/nextjs",
     options: {
-      builder: {},
       nextConfigPath: path.resolve(__dirname, "../next.config.mjs"),
     },
   },
