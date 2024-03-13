@@ -17,19 +17,33 @@ const button = cva("button", {
         "pb-2",
         "pt-2.5",
         "text-xs",
+        "after:from-transparent",
+        "[&>span.ripple]:bg-transparent",
       ],
       success: ["bg-success", "text-success-foreground"],
-      warning: ["bg-warning", "text-warning-foreground"],
+      warning: [
+        "bg-warning",
+        "text-warning-foreground",
+        "[&>span.ripple]:bg-warning-foreground",
+      ],
       danger: ["bg-danger", "text-danger-foreground"],
       info: ["bg-info", "text-info-foreground"],
-      light: ["bg-light", "text-dark", "after:from-neutral/30"],
+      light: [
+        "bg-light",
+        "text-dark",
+        "after:from-neutral/30",
+        "[&>span.ripple]:bg-neutral",
+      ],
       dark: ["bg-neutral-950", "text-neutral-50"],
       link: [
         "text-primary",
+        "hover:bg-primary/15",
         "shadow-transparent",
         "hover:shadow-transparent",
         "focus:shadow-transparent",
         "active:shadow-transparent",
+        "after:from-primary/30",
+        "[&>span.ripple]:bg-primary",
       ],
       outline: [
         "border-2",
@@ -41,6 +55,7 @@ const button = cva("button", {
         "focus:shadow-transparent",
         "active:shadow-transparent",
         "after:from-primary/30",
+        "[&>span.ripple]:bg-primary",
       ],
       floating: [
         "p-2",
@@ -61,53 +76,49 @@ const button = cva("button", {
   },
 });
 
+const createRipple = (event: React.MouseEvent) => {
+  event.preventDefault();
+
+  const button = event.currentTarget as HTMLButtonElement;
+
+  if (button) {
+    const circle = document.createElement("span");
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    circle.classList.add("ripple");
+
+    const ripple = button.getElementsByClassName("ripple")[0];
+
+    if (ripple) {
+      ripple.remove();
+    }
+
+    button.appendChild(circle);
+  }
+};
+
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button>,
-    React.PropsWithChildren {
-  ripple?: boolean;
-  rippleColor?: string;
-}
+    React.PropsWithChildren<{}> {}
 
 const Button: React.FC<Readonly<ButtonProps>> = ({
   children,
   className,
   intent,
-  ripple = true,
-  rippleColor = "light",
   size,
 }) => {
-  if (intent === ("tertiary" || "link")) {
-    ripple = false;
-  }
-
-  if (intent === "outline") {
-    rippleColor = "primary";
-  }
-
-  if (intent === "light") {
-    rippleColor = "#b8b9c1";
-  }
-
-  React.useEffect(() => {
-    if (!ripple) return;
-
-    const init = async () => {
-      const { Ripple, initTE } = await import("tw-elements");
-      initTE({ Ripple });
-    };
-
-    init();
-  }, [ripple]);
-
   return (
     <button
       className={cn(
-        "inline-block relative overflow-hidden rounded text-base font-medium text-center uppercase leading-normal transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none shadow-[hsla(0,0%,0%,0.2)_0px_3px_1px_-2px,hsla(0,0%,0%,0.14)_0px_2px_2px_0px,hsla(0,0%,0%,0.12)_0px_1px_5px_0px] hover:shadow-[hsla(0,0%,0%,0.2)_0px_2px_4px_-1px,hsla(0,0%,0%,0.14)_0px_4px_5px_0px,hsla(0,0%,0%,0.12)_0px_1px_10px_0px] focus:shadow-[hsla(0,0%,0%,0.2)_0px_3px_1px_-2px,hsla(0,0%,0%,0.14)_0px_2px_2px_0px,hsla(0,0%,0%,0.12)_0px_1px_5px_0px] active:shadow-[hsla(0,0%,0%,0.2)_0px_5px_5px_-3px,hsla(0,0%,0%,0.14)_0px_8px_10px_1px,hsla(0,0%,0%,0.12)_0px_3px_14px_2px] after:bg-gradient-to-r after:from-white/30 after:to-transparent after:h-[155px] after:-left-[75px] after:absolute after:top-[-50px] after:rotate-[35deg] after:transition-all after:duration-[550ms] after:ease-[cubic-bezier(0.19,1,0.22,1)] after:w-[50px] after:z-10 hocus:after:left-[120%] hocus:after:transition-all hocus:after:duration-[550ms] hocus:after:ease-[cubic-bezier(0.19,1,0.22,1)]",
+        "inline-block relative overflow-hidden rounded text-base font-medium text-center uppercase leading-normal transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-light focus-visible:outline-none shadow-[hsla(0,0%,0%,0.2)_0px_3px_1px_-2px,hsla(0,0%,0%,0.14)_0px_2px_2px_0px,hsla(0,0%,0%,0.12)_0px_1px_5px_0px] hover:shadow-[hsla(0,0%,0%,0.2)_0px_2px_4px_-1px,hsla(0,0%,0%,0.14)_0px_4px_5px_0px,hsla(0,0%,0%,0.12)_0px_1px_10px_0px] focus:shadow-[hsla(0,0%,0%,0.2)_0px_3px_1px_-2px,hsla(0,0%,0%,0.14)_0px_2px_2px_0px,hsla(0,0%,0%,0.12)_0px_1px_5px_0px] active:shadow-[hsla(0,0%,0%,0.2)_0px_5px_5px_-3px,hsla(0,0%,0%,0.14)_0px_8px_10px_1px,hsla(0,0%,0%,0.12)_0px_3px_14px_2px] after:bg-gradient-to-r after:from-light/30 after:h-[155px] after:-left-[75px] after:absolute after:top-[-50px] after:rotate-[35deg] after:transition-all after:duration-[550ms] after:ease-[cubic-bezier(0.19,1,0.22,1)] after:w-[50px] after:z-10 hocus:after:left-[120%] hocus:after:transition-all hocus:after:duration-[550ms] hocus:after:ease-[cubic-bezier(0.19,1,0.22,1)] [&>span.ripple]:absolute [&>span.ripple]:rounded-full [&>span.ripple]:scale-0 [&>span.ripple]:animate-ripple [&>span.ripple]:bg-gradient-radial [&>span.ripple]:from-light [&>span.ripple]:from-50% [&_a]:inline-flex [&_a]:gap-x-1 [&_a]:items-center",
         button({ className, intent, size })
       )}
-      data-te-ripple-color={ripple ? rippleColor : undefined}
-      data-te-ripple-init={ripple}
+      onClick={createRipple}
       type="button"
     >
       <span className="z-20">{children}</span>
