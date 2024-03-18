@@ -1,5 +1,4 @@
-import React from "react";
-import Script from "next/script";
+import { FC, PropsWithChildren } from "react";
 import {
   fontDisplay,
   fontMono,
@@ -10,9 +9,7 @@ import { Providers } from "@/lib/providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const RootLayout: React.FC<Readonly<React.PropsWithChildren>> = ({
-  children,
-}) => {
+const RootLayout: FC<Readonly<PropsWithChildren>> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -34,7 +31,6 @@ const RootLayout: React.FC<Readonly<React.PropsWithChildren>> = ({
         )}
       >
         <Providers>{children}</Providers>
-        <Script src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js" />
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import { ButtonHTMLAttributes, FC, MouseEvent, PropsWithChildren } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -76,7 +76,7 @@ const button = cva("button", {
   },
 });
 
-const createRipple = (event: React.MouseEvent) => {
+const createRipple = (event: MouseEvent) => {
   event.preventDefault();
 
   const button = event.currentTarget as HTMLButtonElement;
@@ -102,11 +102,11 @@ const createRipple = (event: React.MouseEvent) => {
 };
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button>,
-    React.PropsWithChildren<{}> {}
+    PropsWithChildren<{}> {}
 
-const Button: React.FC<Readonly<ButtonProps>> = ({
+const Button: FC<Readonly<ButtonProps>> = ({
   children,
   className,
   intent,

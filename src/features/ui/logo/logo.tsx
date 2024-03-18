@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,7 @@ interface LogoSVGProps {
   title: string;
 }
 
-const Horizontal: React.FC<LogoSVGProps> = ({ title }) => {
+const Horizontal: FC<LogoSVGProps> = ({ title }) => {
   return (
     <svg
       height="100%"
@@ -36,7 +36,7 @@ const Horizontal: React.FC<LogoSVGProps> = ({ title }) => {
   );
 };
 
-const Icon: React.FC<LogoSVGProps> = ({ title }) => {
+const Icon: FC<LogoSVGProps> = ({ title }) => {
   return (
     <svg
       height="100%"
@@ -54,7 +54,7 @@ const Icon: React.FC<LogoSVGProps> = ({ title }) => {
   );
 };
 
-const IconWithStackedText: React.FC<LogoSVGProps> = ({ title }) => {
+const IconWithStackedText: FC<LogoSVGProps> = ({ title }) => {
   return (
     <svg
       height="100%"
@@ -76,7 +76,7 @@ const IconWithStackedText: React.FC<LogoSVGProps> = ({ title }) => {
   );
 };
 
-const Stacked: React.FC<LogoSVGProps> = ({ title }) => {
+const Stacked: FC<LogoSVGProps> = ({ title }) => {
   return (
     <svg
       height="100%"
@@ -98,7 +98,7 @@ const Stacked: React.FC<LogoSVGProps> = ({ title }) => {
   );
 };
 
-const StackedText: React.FC<LogoSVGProps> = ({ title }) => {
+const StackedText: FC<LogoSVGProps> = ({ title }) => {
   return (
     <svg
       height="100%"
@@ -131,7 +131,7 @@ interface LogoProps {
   layout?: LogoLayouts;
 }
 
-const Logo: React.FC<LogoProps> = ({
+const Logo: FC<LogoProps> = ({
   title = "Augusta Quest homepage",
   className,
   href,

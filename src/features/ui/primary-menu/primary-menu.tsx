@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
 
-const PrimaryMenu: React.FC = () => {
-  React.useEffect(() => {
+import React, { FC, useEffect } from "react";
+
+const PrimaryMenu: FC = () => {
+  useEffect(() => {
     const init = async () => {
-      const { Collapse, Dropdown, initTE } = await import("tw-elements");
-      initTE({ Collapse, Dropdown });
+      const { Collapse, Dropdown, initTWE } = await import("tw-elements");
+      initTWE({ Collapse, Dropdown });
     };
     init();
   }, []);

@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import { FC, useEffect } from "react";
 
-const GlobalError: React.FC<{
+const GlobalError: FC<{
   error: Error & { digest?: string };
   reset: () => void;
 }> = ({ error, reset }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     /**
      * Log the error to an error reporting service
      */
